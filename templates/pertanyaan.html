@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="quiz">
+    <div class="progress-bar">
+        <div class="progress" style="width: {{ (current_question / total_questions) * 100 }}%;"></div>
+    </div>
+    <div class="question">
+        <h2>{{ pertanyaan['pertanyaan'] }}</h2>
+        <form method="POST">
+            <ul>
+                {% for opsi in pertanyaan['opsi'] %}
+                    <li>
+                        <label>
+                            <input type="radio" name="jawaban" value="{{ opsi['nilai'] }}" required> {{ opsi['teks'] }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="navigation">
+                {% if current_question > 1 %}
+                    <a href="{{ url_for('pertanyaan', current_question=current_question-2) }}" class="btn">Kembali</a>
+                {% endif %}
+                <button type="submit" class="btn">Berikutnya</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

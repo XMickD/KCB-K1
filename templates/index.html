@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1>Temukan Pekerjaan yang Tepat untuk Anda</h1>
+    <p>Jawab beberapa pertanyaan sederhana dan kami akan merekomendasikan pekerjaan yang sesuai dengan keterampilan dan minat Anda.</p>
+    <a href="{{ url_for('pertanyaan') }}" class="btn">Mulai Kuis</a>
+</section>
+<section class="benefits">
+    <div class="benefit">
+        <h2>Rekomendasi yang Dipersonalisasi</h2>
+        <p>Kami memberikan rekomendasi berdasarkan preferensi Anda.</p>
+    </div>
+    <div class="benefit">
+        <h2>Database Pekerjaan Terlengkap</h2>
+        <p>Kami memiliki koleksi pekerjaan dari berbagai bidang dan industri.</p>
+    </div>
+    <div class="benefit">
+        <h2>Review dari Profesional Lain</h2>
+        <p>Lihat ulasan dari profesional lain untuk menemukan pekerjaan terbaik.</p>
+    </div>
+</section>
+{% endblock %}

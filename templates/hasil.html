@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="results">
+    <h1>Rekomendasi Pekerjaan untuk Anda</h1>
+    <ul>
+        {% for pekerjaan in rekomendasi %}
+            <li>{{ pekerjaan }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}" class="btn">Kembali ke Beranda</a>
+</section>
+{% endblock %}
